@@ -1,4 +1,12 @@
-class TestingInheritance {
+class MultilevelInheritance {
+		String s ;
+		public void printString() {
+				s = "hello world";
+				System.out.println(s);
+		}
+}
+
+class TestingInheritance extends MultilevelInheritance {
 		int a , b;
 		
 		TestingInheritance(){
@@ -9,6 +17,10 @@ class TestingInheritance {
 				int sum;
 				sum= a+b;
 				System.out.println(sum);
+		}
+		//private method cannot be used by parent class 
+		private void subtract(){
+				System.out.println("subtraction="+ (a - b));
 		}
 }
 
@@ -24,5 +36,7 @@ class inheritance {
 				// test.sum();
 				ChildClass childObject = new ChildClass();
 				childObject.sum();
+				// childObject.subtract();
+				childObject.printString();
 		}
 }
