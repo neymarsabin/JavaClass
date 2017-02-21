@@ -8,7 +8,6 @@ class MultilevelInheritance {
 
 class TestingInheritance extends MultilevelInheritance {
 		int a , b;
-		
 		TestingInheritance(){
 				a = 5;
 				b = 8;
@@ -27,6 +26,10 @@ class TestingInheritance extends MultilevelInheritance {
 class ChildClass extends TestingInheritance {
 		ChildClass() {
 				System.out.println("successfully performed inheritance");
+		}
+		// overiding function of parent class [ TestingInheritance ]
+		public void sum(){
+				System.out.println(10+20);
 		}
 }
 
