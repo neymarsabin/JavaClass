@@ -16,14 +16,12 @@ class Label {
 				jf.setVisible(true);
 				jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				jf.setLocation(100,100);
-				// jf.setBounds(100,50,700,300);
-				jf.setSize(500,300);
+ 				// jf.setBounds(100,50,700,300);
+				jf.setSize(600,600);
 				jf.setLayout(null);
 
 				
 				Font f = new Font("Monaco",Font.PLAIN,20); // f is the object of the Font class with Monaco, it's plain and size is 30
-
-
 
 
 				Container c = jf.getContentPane();
@@ -47,6 +45,13 @@ class Label {
 				lpassword.setFont(f); //setting fonts to the label password 
 				lpassword.setForeground(Color.RED); 
 				c.add(lpassword);
+
+				// // for images in label
+				// ImageIcon icon = new ImageIcon("./solarized.");
+				// JLabel limage = new JLabel(icon);
+				// c.add(limage);
+				// limage.setBounds(400,500,400,400);
+
 				
 				// For username and password textfields
 				JTextField txtname = new JTextField();
@@ -59,11 +64,53 @@ class Label {
 				c.add(passname);
 				passname.setBounds(150,130,100,30);
 
+				// Label for gender
+				JLabel lgender = new JLabel("Gender:");
+				c.add(lgender);
+				lgender.setFont(f);
+				lgender.setForeground(Color.RED);
+				lgender.setBounds(20,180,100,30);
+
+				// for radio button male 
+				JRadioButton rbtmale = new JRadioButton("Male:");
+				c.add(rbtmale);
+				rbtmale.setBounds(150,180,100,30);
+				// for radio button female 
+				JRadioButton rbtfemale = new JRadioButton("Female:");
+				c.add(rbtfemale);
+				rbtfemale.setBounds(150,215,100,30);
+				rbtmale.setSelected(true);
+				rbtfemale.setEnabled(false);
+
+				
+				// By default radio buttons are kept in same group we have to separate it 
+				ButtonGroup gender = new ButtonGroup();
+				gender.add(rbtmale);
+				gender.add(rbtfemale);
+				
+				// Adding a checkbox
+				// Label for checkbox
+				JLabel jchklabel = new JLabel("Visited Countries:");
+				c.add(jchklabel);
+				jchklabel.setForeground(Color.RED);
+				jchklabel.setBounds(10,250,100,30);
+				
+				
+				JCheckBox chkboxnepal = new JCheckBox("Nepal");
+				c.add(chkboxnepal);
+				chkboxnepal.setBounds(150,250,100,30);
+				JCheckBox chkboxamerica = new JCheckBox("America");
+				c.add(chkboxamerica);
+				chkboxamerica.setBounds(260,250,100,30);
+				JCheckBox chkboxengland = new JCheckBox("England");
+				c.add(chkboxengland);
+				chkboxengland.setBounds(370,250,100,30);
+
 
 				// Adding a submit button
 				JButton submitBtn = new JButton("Submit");
 				c.add(submitBtn);
-				submitBtn.setBounds(150,180,100,30);
+				submitBtn.setBounds(150,400,100,30);
 				
 		}
 }
